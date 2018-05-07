@@ -1,0 +1,149 @@
+---
+output:
+  pdf_document:
+  html_document: default
+  word_document: default
+---
+```{r message=F, include=F}
+  load(file="variables.RData")
+  
+  library(psych)
+  library(tidyverse)
+  library(tools)
+  library(knitr)
+  library(scales)
+  library(stargazer)
+  library(ggplot2)
+```
+
+---
+title: "Arteriovenous fistula in the head and neck region - systematic review of cases"
+author:
+- Jurriën L.A. Embrechts
+- Rilke Snoeren
+- Johannes C.F. Ket
+- Remco B.R. de Bree
+date: 26-3-2018
+bibliography: ~/Users/jur/Documents/Studie/Onderzoek/full_collection.bib
+csl: build/nature.csl
+---
+
+# Arteriovenous fistula in the head and neck region - systematic review of cases
+
+## Abstract
+*Relevance*: The aim of this study is to identify clinical characteristics, anatomical distribution and evaluate treatment methods of arteriovenous fistula in the head and neck. We analyze differences between 2 groups, primary and secondary arteriovenous fistula.  
+*Methods*: Available literature from January 2005 to February 2018 was evaluated and cases from literature on extracranial AVF in the head and neck were pooled and analyzed.  
+*Results*: 
+*Conclusions*:
+
+## Background and significance
+Exact incidence of extracranial AVFs in the head and neck is unknown, but current availability of literature is illustrative of its rarity. To our best knowledge nor large series nor descriptive studies of pooled data from published papers regarding hAVFs exist. In this study we analyze all reported literature between 2005 and 2018 and perform a statistical analysis on the pooled data in order to define clinical characteristics, risk factors, anatomical distribution and investigate treatment outcome. Additionally, no comparative study between primary (congenital or spontaneous) and secondary (incidental trauma or iatrogenic) hAVFs is published.
+
+## Introduction
+Vascular anomalies consist of a broad, heterogeneous, spectrum of vascular tumors and vascular malformations. The major difference to distinguish between vascular tumors and malformations is the presence of increased endothelial turnover on histopathology in vascular tumors.[@Lowe:2012gd] Both tumors and malformed vascular tissues can be fast- or slow-flow lesions. Slow-flow lesions consist of capillaries, lymphatic vessels, veins or a combination. Fast-flow lesions include all with the presence of arterial flow and are potentially more aggressive.[@Behr:2013gg; @Wassef:2015dy] Fast-flow vascular malformations are divided in arteriovenous malformations (AVMs) and arteriovenous fistulas (AVFs). An arteriovenous fistula (AVF) is considered a high-flow malignant type of vascular malformation according to the ISSVA classification 2014.[@Wassef:2015dy] 
+An AVF consists of a direct connection between an artery and a vein without a intervening capillary bed or nidus. These rare entities are distinguished into two main groups in literature, primary (congenital or spontaneous) and secondary (incidental trauma or iatrogenic). AVFs in the head and neck can cause disfigurement, distal ischemia with or without functional loss, pain, pulsatile tinnitus and (lethal) cardial decompensation in severe cases. 
+Equally in AVMs a capillary bed is bypassed by direct artery to vein connections. Commonly in AVMs a central nidus, the center of an AVM whence tortuous collaterals are formed, is present.[@Nassiri:2015wb] AVMs are considered congenital due to errors in the embryonic or fetal vascular differentiation.[@Lowe:2012gd, @Wassef:2015dy] AVFs are frequently a result of traumatic vascular injury or iatrogenic after surgery, yet congenital AVFs are also known [@Nassiri:2015wb]. Genes which are recognized within vascular malformation syndromes with AVMs are also found in these syndromes and AVFs such as hereditary hemorrhagic teleangiectasia and capillary malformation - arteriovenous malformations (CM-AVM) and the RASA1 gene.[@Wassef:2015dy]. 
+Conventional work-up to determine the nature of a suspected vascular anomaly consists of imaging. This work-up can be done using ultrasound, CTA, MRA, and/or angiography. The gold standard is conventional angiography. In absence of a central nidus, for which no histological markers are known, determination between small AVMs and (congenital) AVFs can remain difficult.  
+The term cirsoid aneurysm was applied to vascular malformations of the scalp in 1833 by Brecht and is used to describe a fistulous connection between the arterial feeding vessels of the scalp and the draining veins without an intervening capillary bed.[@ELKIN:1924hw; @Gurkanlar:2006it] 
+
+## Methods
+### Study selection
+We performed a systematic search on PUBMED, EMBASE and the Cochrane library using definitions for AVFs and the head and neck region (appendix 1[//]( Methode van Hans Ket komt hier en in ‘supplementary information)). Only studies from January 2005 through May 2016 were included. Titles and abstracts where screened on potential relevant studies by two independent researchers using the following inclusion criteria: extracranial AVFs in head and/or neck, spinal extradural AVF, cirsoid aneurysm, AVF is confirmed by imaging or histology restricted to only human subjects. When no agreement was reached on paper inclusion the last author was consulted. Subsequently the full text was examined for final inclusion. When no full text was available, the AVF was purposely surgically constructed, no individual patient data was available or the AVF was not located extracranial and extradural and in the head and neck region; the study, case or case series was excluded. Also two unpublished additional cases were added to the database. 
+
+### Data extraction
+Individualized patient data was collected from the included papers. This extracted data is pooled and analyzed. Important parameters include patient characteristics (age, gender) and genesis of the AVF. Genesis is divided in a primary and secondary origin. Primary includes spontaneous or congenital genesis of the AVF, secondary genesis include AVFs after surgery or trauma. Other parameters that are subtracted from included papers are fistula characteristics: afferent arterial feeders and efferent venous drainage, symptoms at presentation, time between presentation and surgery or trauma and treatment modality. Additionally, used diagnostics, follow up time and recurrence are tracked. 
+
+### Data analysis
+Data from included papers is pooled and analyzed with 'r R.version$version.string and Rstudio Version r RStudio.Version()$version RStudio, Inc. using the tidyverse 1.2.1, psych 1.7.3.2.1 and readxl 1.0.0 package. Primary AVFs are compared with secondary AVFs on baseline characteristics as gender and age at presentation. Also afferent arterial feeders, efferent venous drainage, treatment modality, symptoms and number of fistulas are compared. 
+Data of primary and secondary AVFs are compared using independent two-sided t-test for normal distributed continuous variables, Mann Whitney U test for not normally distributed continuous variables and fisher exact tests for comparison of categorical variables. Statistical significance is defined at a p value <0.05. Analysis is performed on all available data from included individual patient information. 
+
+## Results
+Our systematic search yielded a total of 3247 articles in the time frame from January 2005 to February 2018. Selection on title and abstract eliminated 2925 articles after consensus was reached between the reviewers. The residual 322 articles where perused and 207 where included, which comprised 300 patients in total. 
+
+### Demographics
+Table 1 summarizes number of patients, age, sex and follow-up included `r nrow(AVF)` patients. Age was not normally distributed (shapiro wilk p-value < 0.01) with a mean of `r round((describe(AVF$Age)$mean), 1)` years (standard deviation `r round((describe(AVF$Age)$sd), 1)` years, oldest patient is `r describe(AVF$Age)$max` years old, youngest a few days). There was no sex predilection with `r percent(nrow(AVF %>% filter(Gender == "m"))/nrow(AVF))` male in the total group. `r percent(nrow(primair_AVF)/nrow(AVF))` had a primary genesis, `r percent(nrow(secundair_AVF)/nrow(AVF))` secondary genesis and `r nrow(AVF) - nrow(primair_AVF) - nrow(secundair_AVF)` cases (`r percent((nrow(AVF)-nrow(primair_AVF)-nrow(secundair_AVF))/nrow(AVF))`) did not report any genesis.
+
+**Table 1: Demographics of the population**
+`r kable(results_demographics)`
+		
+### Clinical presentation
+Overall patients presented 3.6 years (`r round(describe(AVF$TimeSinceFirstSymptoms)$mean,1)` months) after the onset of the first symptoms.
+In `r nrow(filter(AVF, is.na(Symptoms)))` cases (`r percent(nrow(filter(AVF, is.na(Symptoms)))/nrow(AVF))`) no symptoms at presentation are disclosed. Of the remaining `r nrow(AVF)-nrow(filter(AVF, is.na(Symptoms)))` patients `r nrow(filter(AVF, grepl("PULM", Symptoms)))` (`r percent(nrow(filter(AVF, grepl("PULM", Symptoms)))/nrow(AVF))`) presented with a pulsatile mass.  Tinnitus, pulsatile tinnitus or murmur is reported in `r nrow(filter(AVF, grepl("TIN|MUR|PTIN", Symptoms)))` (`r percent(nrow(filter(AVF, grepl("TIN|MUR|PTIN", Symptoms)))/nrow(AVF))`) patients with a objective bruit or thrill in `r nrow(filter(AVF, grepl("TR|BR", Symptoms)))` (`r percent(nrow(filter(AVF, grepl("TR|BR", Symptoms)))/nrow(AVF))`) of total patients. Objective sound was more present in patients with a secondary genesis of the AVF, although this difference was not significant. Headache was present in `r nrow(filter(AVF, grepl("HEAD", Symptoms)))` (`r percent(nrow(filter(AVF, grepl("HEAD", Symptoms)))/nrow(AVF))`) and was significantly more common in patients with a primary genesis than patients with a secondary origin of the AVF *(p < 0.01)*. `r nrow(filter(AVF, grepl("ALC|ATAX|DYSA|INTB|INES|INST", Symptoms)))` (`r percent(nrow(filter(AVF, grepl("ALC|ATAX|DYSA|INTB|INES|INST", Symptoms)))/nrow(AVF))`) patients presented with symptoms of intracranial pathology[^2] [\\](nog wat aanpassen deze definitie.), `r nrow(filter(AVF, grepl("INCO|MYE|NEDE|QUA|RADI|SPCC|ULE|UAI|UAMW", Symptoms)))` (`r percent(nrow(filter(AVF, grepl("INCO|MYE|NEDE|QUA|RADI|SPCC|ULE|UAI|UAMW", Symptoms)))/nrow(AVF))`) patients with signs of spinal cord compression[^3], `r nrow(filter(AVF, grepl("BLV|DECV|DIP|VFD", Symptoms)))` (`r percent(nrow(filter(AVF, grepl("BLV|DECV|DIP|VFD", Symptoms)))/nrow(AVF))`) patients with visual impairment[^1], `r nrow(filter(AVF, grepl("BLEED|BLEEDT|ECCY|GUMB|HEMO", Symptoms)))` (`r percent(nrow(filter(AVF, grepl("BLEED|BLEEDT|ECCY|GUMB|HEMO", Symptoms)))/nrow(AVF))`) patients with signs of extracranial hemorrhage[^4] and `r nrow(filter(AVF, grepl("CHEM|EPIP|HIP|ORBS|PROP", Symptoms)))` (`r percent(nrow(filter(AVF, grepl("CHEM|EPIP|HIP|ORBS|PROP", Symptoms)))/nrow(AVF))`) patients with ocular symptoms[^5].
+  
+The secondary group consists of `r nrow(secundair_AVF)` patients: `r nrow(filter(AVF, grepl("^T", Genesis)))` (`r percent(nrow(filter(AVF, grepl("^T", Genesis)))/nrow(secundair_AVF))`) patients had a trauma (blunt or penetrating trauma) as a history, `r nrow(filter(AVF, grepl("^OK", Genesis)))` (`r percent(nrow(filter(AVF, grepl("^OK", Genesis)))/nrow(secundair_AVF))`) patients had invasive treatment and `r nrow(filter(AVF, grepl("^SM", Genesis)))` patient developed an AVF secondary to invasive squamous cell carcinoma of the oropharynx. `r nrow(filter(AVF, grepl("^OKCVC", Genesis)))` (`r percent(nrow(filter(AVF, grepl("^OKCVC", Genesis)))/nrow(filter(AVF, grepl("^OK", Genesis))))`) patients of the invasive treatment group developed hAVFs [//](nog geen definitie aanwezig) after insertion of a central venous catheter in the internal jugular vein. `r nrow(filter(AVF, grepl("^OKHT", Genesis)))` (`r percent(nrow(filter(AVF, grepl("^OKHT", Genesis)))/nrow(secundair_AVF))`) patients developed an AVF after hair transplantation surgery and `r nrow(filter(AVF, grepl("^OKICD|OKPLR", Genesis)))` (`r percent(nrow(filter(AVF, grepl("^OKICD|OKPLR", Genesis)))/nrow(secundair_AVF))`) patients  developed a hAVF after pacemaker or icd lead removal.[//](nog geen definitie aanwezig)
+
+- hier is het wellicht nog interessant om de betrokken vaten af te zetten tegen de klachten met name hoofdpijn en pulsatiele tinnitus
+
+**Table 2: Clinical presentation of the population**
+`r kable(results_clinicalPresentation)`
+
+```{r show_figure, fig.width = 3, fig.height = 3, echo=F}
+primair_comorbidity_plot
+secundair_comorbidity_plot
+secundair_genesis_plot
+```
+
+### Anatomical distribution
+The vertebral artery (`r percent(nrow(filter(AVF, grepl("VA", Aff)))/nrow(AVF))`), thyroid artery (`r percent(nrow(filter(AVF, grepl("TA", Aff)))/nrow(AVF))`) and superficial temporal artery (`r percent(nrow(filter(AVF, grepl("STA", Aff)))/nrow(AVF))`) were the most common affected afferent vessels. The jugular vein (`r percent(nrow(filter(AVF, grepl("JV", Eff)))/nrow(AVF))`) and the internal jugular vein (`r percent(nrow(filter(AVF, grepl("IJV", Eff)))/nrow(AVF))`) were the most common affected efferent vessels. 
+
+There was a significantly *(p<0.05)* greater occurence of a fistula in the group of primary genesis than in the group of secondary genesis in the following vessels: palatine artery (`r percent(nrow(filter(primair_AVF, grepl("PA", Aff)))/nrow(primair_AVF))` vs `r percent(nrow(filter(secundair_AVF, grepl("PA", Aff)))/nrow(secundair_AVF))`), epidural venous plexus (`r percent(nrow(filter(primair_AVF, grepl("EVP", Eff)))/nrow(primair_AVF))` vs `r percent(nrow(filter(secundair_AVF, grepl("EVP", Eff)))/nrow(secundair_AVF))`), posterior auricular artery (`r percent(nrow(filter(primair_AVF, grepl("PAA", Aff)))/nrow(primair_AVF))` vs `r percent(nrow(filter(secundair_AVF, grepl("PAA", Aff)))/nrow(secundair_AVF))`), external jugular vein (`r percent(nrow(filter(primair_AVF, grepl("EJV", Eff)))/nrow(primair_AVF))` vs `r percent(nrow(filter(secundair_AVF, grepl("EJV", Eff)))/nrow(secundair_AVF))`), aortic arch (`r percent(nrow(filter(primair_AVF, grepl("AA", Aff)))/nrow(primair_AVF))` vs `r percent(nrow(filter(secundair_AVF, grepl("AA", Aff)))/nrow(secundair_AVF))`), epidural veins (`r percent(nrow(filter(primair_AVF, grepl("EV", Eff)))/nrow(primair_AVF))` vs `r percent(nrow(filter(secundair_AVF, grepl("EV", Eff)))/nrow(secundair_AVF))`), occipital artery (`r percent(nrow(filter(primair_AVF, grepl("OA", Aff)))/nrow(primair_AVF))` vs `r percent(nrow(filter(secundair_AVF, grepl("OA", Aff)))/nrow(secundair_AVF))`), ophthalmic vein (`r percent(nrow(filter(primair_AVF, grepl("OV", Eff)))/nrow(primair_AVF))` vs `r percent(nrow(filter(secundair_AVF, grepl("OV", Eff)))/nrow(secundair_AVF))`) and cervical epidural venous plexus (`r percent(nrow(filter(primair_AVF, grepl("CEVP", Eff)))/nrow(primair_AVF))` vs `r percent(nrow(filter(secundair_AVF, grepl("CEVP", Eff)))/nrow(secundair_AVF))`).[\\](Mogelijk alle epidurale plexus nog samenvoegen?)
+There was a significantly *(p<0.05)* greater occurence of a fistula in the group of secondary genesis than in the group of primary genesis in the following vessels: common carotid artery (`r percent(nrow(filter(secundair_AVF, grepl("CCA", Aff)))/nrow(secundair_AVF))` vs `r percent(nrow(filter(primair_AVF, grepl("CCA", Aff)))/nrow(primair_AVF))`), internal jugular vein (`r percent(nrow(filter(secundair_AVF, grepl("IJV", Eff)))/nrow(secundair_AVF))` vs `r percent(nrow(filter(primair_AVF, grepl("IJV", Eff)))/nrow(primair_AVF))`), subclavian artery (`r percent(nrow(filter(secundair_AVF, grepl("SA", Aff)))/nrow(secundair_AVF))` vs `r percent(nrow(filter(primair_AVF, grepl("SA", Aff)))/nrow(primair_AVF))`), subclavian vein (`r percent(nrow(filter(secundair_AVF, grepl("SV", Eff)))/nrow(secundair_AVF))` vs `r percent(nrow(filter(primair_AVF, grepl("SV", Eff)))/nrow(primair_AVF))`) and the jugular vein (`r percent(nrow(filter(secundair_AVF, grepl("JV", Eff)))/nrow(secundair_AVF))` vs `r percent(nrow(filter(primair_AVF, grepl("JV", Eff)))/nrow(primair_AVF))`). 
+
+In the group with secondary genesis `r percent(nrow(filter(secundair_AVF, grepl("IJV", Eff)) %>% filter(grepl("OKCVC", Genesis)))/nrow(filter(secundair_AVF, grepl("IJV", Eff))))` of fistula comprising the internal jugular vein and `r percent(nrow(filter(secundair_AVF, grepl("BCV|SV", Eff)) %>% filter(grepl("OKCVC", Genesis)))/nrow(filter(secundair_AVF, grepl("BCV|SV", Eff))))` comprising the brachiocephalic or subclavian veins and `r percent(nrow(filter(secundair_AVF, grepl("CCA", Aff)) %>% filter(grepl("OKCVC", Genesis)))/nrow(filter(secundair_AVF, grepl("CCA", Aff))))` of the common carotid artery were related to intravenous catheter placement. 
+`r percent(nrow(filter(secundair_AVF, grepl("BCV|SV", Eff)) %>% filter(grepl("OKPLR", Genesis)))/nrow(filter(secundair_AVF, grepl("BCV|SV", Eff))))` of AVF in the brachiocephalic or subclavian vein and `r percent(nrow(filter(secundair_AVF, grepl("BCA|SA", Eff)) %>% filter(grepl("OKPLR", Genesis)))/nrow(filter(secundair_AVF, grepl("BCA|SA", Eff))))` of the AVF in the brachiocephalic artery were related to pacemaker lead removal.
+
+**Table 3: Anatomical distribution of AVF in the head and neck**
+`r kable(results_afferent)`
+`r kable(results_efferent)`
+
+### Treatment
+`r percent(nrow(pure_endovascular)/nrow(AVF))` received endovascular treatment, `r percent(nrow(pure_surgical)/nrow(AVF))` surgical and `r nrow(both)` patients (`r percent(nrow(both)/nrow(AVF))`) received a combination of surgical and endovascular treatment. `r nrow(refused_AVF)` people refused treatment for their AVF. `r nrow(symptomsAfterTreatment)` people had residual symptoms after treatment, `r nrow(adverseEvents)` people had an adverse event during or after their therapy of whom `r nrow(adverseEventsDeath)` people died. The causes of death were comprised of two cases of pulmonary embolism, septic shock and cerebral hyperperfusion syndrome. [//](Je zou het liefst ook statistiek van treatment naar outcome willen weten maar de outcome is hierin toch erg lastig te meten)
+
+In table 4 we distinguish surgical therapy (ligation or excision), embolization with different agents (liquid, sclerosing, particulate or mechanical), multiple embolization, combined therapy (surgical and embolization) and direct puncture.
+
+**Table 4: Treatment outcomes**
+`r kable(results_treatment)`
+
+Results of different treatment modalities were compared on residual symptoms, adverse events and recurrence. Treatment modalities were divided into different subgroups: direct puncture, embolization (agent not specified and all types of agent) and divided into different subgroups (embolization with liquid agent, mechanical agent, particulate agent, multiple embolization), surgical closure, surgical excision and surgical treatment combined with embolization.
+We saw a significant higher amount of residual symptoms in surgical closure compared to surgical excision, embolization and embolization with mechanical agent. The rate of residual symptoms in surgical excision was significantly lower than embolization with liquid agent, multiple embolizations, surgical treatment combined with embolization and direct puncture. Embolization as a group should a significantly lower rate of residual symptoms than embolization with a liquid agent and multiple embolizations. There was a significantly lower amount of residual symptoms after embolization with a mechanical agent compared to liquid agent, embolization as a group and multiple embolizations. 
+Surgical treatment combined with embolization showed a significant higher amount of adverse events than treatment with surgical excision, embolization, embolization with liquid agent and embolization with mechanical agent. 
+Surgical excision showed a significant lower amount of recurrence than direct puncture.
+
+**Table 5: Treatment outcomes** 
+
+```{r show_figure2, fig.width = 3, fig.height = 3, echo=F, , tidy=TRUE, tidy.opts=list(width.cutoff=60)}
+residualsymptoms_graph
+adverseevents_graph
+``` 
+
+```{r show_figure3, fig.width = 3, fig.height = 3, echo=F, , tidy=TRUE, tidy.opts=list(width.cutoff=60)}
+recurrence_graph
+```
+
+## Discussion
+Arteriovenous fistula of the head and neck is a uncommon pathology. In certain cases symptoms and clinical presentation can mimic an arteriovenous malformation (AVM) and the two entities can be difficult to distinguish. We excluded lesions containing a nidus to segregate the AVM from the AVF. 
+The current review relies on available literature of patients presented with lesions. However we hypothesize that an important part of patients will not seek medical attention for especially symptom-free lesions or even harbor undetected lesions. In our study `r percent(nrow(filter(AVF, is.na(Symptoms)))/nrow(AVF))` of patients presented lesions without symptoms and only `r results_clinicalPresentation[results_clinicalPresentation$groep == "Growth", 3]` reported signs of lesional growth. 
+
+We noticed a high rate of recurrence, adverse events and residual symptoms of the AVF that were treated with direct puncture. Although these results were not significant we believe that treatment of AVF with direct puncture is ill-advised.
+
+Mortality in article Robbs et al. with surgical arterial reconstruction as treatment method revealed a mortality of 2% within the first week, unrelated to the procedure and among the patients treated more than one week after injury 12% died from postoperative complications. Recurrence was 2% [@Robbs:1994je]. 
+We found a mortality of `r percent(nrow(adverseEventsDeath)/nrow(AVF))` (n=`r nrow(adverseEventsDeath)`) in our current study. However his study comprised war veterans and with only traumatic injuries. 
+
+### Study limitations
+In this article we systematically reviewed current literature, which was limited to case reports and case series. The retrospective and non-randomized nature of the pooled data could therefore be subjected to publication bias and may lead to an underestimation of adverse events, recurrence, residual symptoms, untreated patients and self-limiting disease. Also locally available experience, resources and patient characteristics may influence choice of treatment, post-operative recovery and follow-up which may all vary internationally and between the different centers.
+
+## Conclusion
+We found that secondary hAVF is almost twice as common than primary hAVF without sex predilection. Most patients presented in their thirties although the age of presentation was significantly higher in secondary AVFs. Symptoms existed multiple years before patients were treated. We saw a significantly higher amount of ocular symptoms and headache in the primary or spontaneous group. In the group with secondary genesis of the AVF sound was audible more often than in primary AVF.[//](more superficial localisation of the lesion?)
+Lesions to the carotid arteries especially the common carotid artery and brachiocephalic or subclavian artery were significantly more common in secondary hAVFs than primary hAVFs.  
+Brachiocephalic or subclavian veins and internal jugular were also significantly more common affected in secondary AVF. The external jugular vein and it's afferents were more commonly affected in primary AVF.
+
+## Disclosure
+The authors report no conflict of interest concerning the materials or methods used in this study or the findings specified in this paper. Author contributions to the study and manuscript preparation include the following. Conception: Embrechts. Design: Embrechts, Snoeren. Acquisition of data: Embrechts, Snoeren, Ket. Analysis and interpretation of data: Embrechts, Snoeren, de Bree. Drafting the article: Embrechts, Snoeren, de Bree. Critically revising the article: Embrechts, Snoeren, de Bree. Reviewed submitted version of manuscript: all authors. 
+
+
+# References
+[^1]: Visual impairment: blurry vision, decreased vision, diplopia, visual field defect (BLV, DECV, DIP, VFD)
+[^2]: Intracranial symptoms: Transient ischemic attack, seizures, SAH, intracranial steal, intracranial embolic stroke, intracranial bleeding, ataxia, acute loss of consciousness (TIA, SEIZ, SAH, INST, INES, INTB, ATAX, ALC, SEIZ, TIA, VOM) 
+[^3]: Spinal cord compression: incontinence, myelopathy, neurologic deficit, (upper extremity weakness) quadriparesis, radiculopathy, spinal cord compression, upper limb edema, upper limb ischemia, upper limb muscle weakness, (INCO, MYE, NEDE, QUA, RADI, SPCC, ULE, UAI, UAM)
+[^4]: extracranial hemorrhage: hemorrhage, ecchymosis, bleeding, gum bleeding, bleeding after tooth extraction,  (HEMO, ECCY, GUMB, BLEED, BLEEDT)
+[^5]: ocular symptoms: chemotic, epiphora, high intra-ocular pressure, orbital swelling, proptosis (CHEM, EPIP, HIP, ORBS, PROP)  
